@@ -9,7 +9,7 @@ body {
 .title {
     display: flex;
     justify-content: center;
-    margin-bottom: 47px;
+    margin-bottom: 12px;
 }
 
 .title h1 {
@@ -18,25 +18,37 @@ body {
     color: #75B79E;
 }
 
+.conteiner {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .game-field {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     width: 872px;
+    flex-wrap: wrap;
 }
 
-.card {
-    position: relative;
-}
-
-.face {
+.carta {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    border: 1px solid #99CEA8;
+    background-color: #A7E9AF;
     height: 146px;
     width: 117px;
-    background-color: #A7E9AF;
     border-radius: 5px;
-    border: 1px solid #99CEA8;
+    margin: 12px;
+
+}
+
+.face {
+
+
     transition: all 1s;
     transform-style: preserve-3d;
     backface-visibility: hidden;
