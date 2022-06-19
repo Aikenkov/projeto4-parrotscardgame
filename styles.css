@@ -6,69 +6,72 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-.title {
+.titulo {
     display: flex;
     justify-content: center;
     margin-bottom: 12px;
 }
 
-.title h1 {
+.titulo h1 {
     font-weight: 700;
     font-size: 56px;
     color: #75B79E;
 }
 
-.conteiner {
+.conteudo {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
-.game-field {
+.campo-de-jogo {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     width: 872px;
     flex-wrap: wrap;
+}
+
+.conteudo img {
+    height: 100px;
+    width: 100px;
 }
 
 .carta {
     display: flex;
     justify-content: center;
-    align-items: center;
-    position: relative;
-    border: 1px solid #99CEA8;
-    background-color: #A7E9AF;
-    height: 146px;
-    width: 117px;
-    border-radius: 5px;
-    margin: 12px;
-
+    transform-style: preserve-3d;
+    transition: all 1s linear;
 }
 
 .face {
+    height: 146px;
+    width: 117px;
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    transition: all 1s;
-    transform-style: preserve-3d;
-    backface-visibility: hidden;
-    position: absolute;
+    background-color: #A7E9AF;
+    border: 1px solid #99CEA8;
+    border-radius: 5px;
+
+    margin: 12px;
 }
 
-.back-face {
+.frente {
     transform: rotateY(180deg);
+    backface-visibility: hidden;
 }
 
-.card:hover .back-face {
-    transform: rotateY(0deg);
+/* .verso {} */
+
+.virar {
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
 }
 
-.card:hover .front-face {
-    transform: rotateY(-180deg);
-}
-
-
-.game-field img {
-    height: 100px;
-    width: 100px;
+.hidden {
+    display: none;
 }
