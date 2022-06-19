@@ -7,14 +7,13 @@ body {
 }
 
 .titulo {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 12px;
+    margin: 40px 0 40px 0;
 }
 
 .titulo h1 {
     font-weight: 700;
     font-size: 56px;
+    text-align: center;
     color: #75B79E;
 }
 
@@ -23,13 +22,12 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
 }
 
 .campo-de-jogo {
     display: flex;
     justify-content: space-evenly;
-    width: 872px;
+    max-width: 872px;
     flex-wrap: wrap;
 }
 
@@ -74,4 +72,15 @@ body {
 
 .hidden {
     display: none;
+}
+
+
+@media (max-width: 390px) {
+    .titulo h1 {
+        font-size: 36px;
+    }
+
+    .campo-de-jogo {
+        display: block;
+    }
 }
