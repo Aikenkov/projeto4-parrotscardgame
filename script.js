@@ -1,3 +1,4 @@
+let field = document.querySelector('.game-field');
 let quantidade = prompt('Escolha o número de cartas (4-14)(par)')
 distribuir()
 function distribuir() {
@@ -5,7 +6,7 @@ function distribuir() {
 
         quantidade = prompt('Escolha o número de cartas (4-14)(par)')
     }
-    distribuir()
+
 }
 
 function vira(element) {
@@ -13,8 +14,17 @@ function vira(element) {
     front.classList.add('turn')
     let back = element.querySelector('back-face face');
     back.classList.add('turn')
+}
 
+const nomes = ["unicorn", "fiesta", "bobross", "explody", "metal", "revertit", "triplets"];
 
+for (let i = 0; i < quantidade / 2; i++) {
+    const cartaTemplate = `
+    <div class="carta">
+      <img src="./images/${nomes[i]}parrot.gif"/>
+      <img src="./images/${nomes[i]}parrot.gif"/>
+    </div>
+`;
 
-
+    document.querySelector(".game-field").innerHTML += cartaTemplate;
 }
