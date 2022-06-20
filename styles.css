@@ -60,14 +60,12 @@ body {
 
 .frente {
     transform: rotateY(180deg);
-    backface-visibility: hidden;
 }
 
 /* .verso {} */
 
 .virar {
     transform: rotateY(180deg);
-    backface-visibility: hidden;
 }
 
 .hidden {
