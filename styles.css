@@ -74,6 +74,38 @@ body {
     display: none;
 }
 
+.tela-final {
+    width: 100vw;
+    height: 100vw;
+    background-color: rgba(177, 235, 141, 0.8);
+    z-index: 1;
+    position: fixed;
+}
+
+.tela-final p {
+    font-size: 25px;
+
+}
+
+.tela-final img {
+    height: 50%;
+    width: auto;
+}
+
+.tela-final div {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 300px;
+    width: 500px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    position: fixed;
+    top: calc(50% - 150px);
+    left: calc(50% - 250px);
+    z-index: 2;
+}
+
 
 @media (max-width: 390px) {
     .titulo h1 {

@@ -53,6 +53,7 @@ distribuir()
 
 
 let cartasViradas = 0;
+let vezesViradas = 0;
 let totalCartasViradas = 0;
 
 let carta1, carta2;
@@ -63,7 +64,7 @@ let image1, image2;
 function virarCarta(elemento) {
 
     elemento.classList.remove('virar')
-
+    vezesViradas++;
     setTimeout(function () {
         elemento.querySelector(".verso").classList.remove("hidden");
         elemento.querySelector(".frente").classList.add("hidden");
@@ -117,6 +118,20 @@ function virarCarta(elemento) {
             cartasViradas++;
         }
 
+
+    }
+    parabenizar()
+}
+
+function parabenizar() {
+    if (totalCartasViradas == quantidade) {
+        let mensagem = document.querySelector('.conteudo')
+        mensagem.innerHTML = ` <div class="tela-final">
+        <div>
+            <p>Você ganhou em ${vezesViradas} jogadas!</p>
+            <img src="./images/plant5.gif">
+        </div>
+    </div>`
 
     }
 }
