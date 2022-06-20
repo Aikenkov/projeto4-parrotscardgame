@@ -77,6 +77,7 @@ body {
 .tela-final {
     width: 100vw;
     height: 100vw;
+
     background-color: rgba(177, 235, 141, 0.8);
     z-index: 1;
     position: fixed;
@@ -98,6 +99,8 @@ body {
     justify-content: space-evenly;
     height: 300px;
     width: 500px;
+    padding: 15px;
+    box-sizing: border-box;
     background-color: #ffffff;
     border-radius: 20px;
     position: fixed;
@@ -113,6 +116,21 @@ body {
     }
 
     .campo-de-jogo {
-        display: block;
+        flex-direction: column;
+    }
+
+    .tela-final p {
+        font-size: 20px;
+    }
+
+    .tela-final {
+        min-height: 2000px;
+    }
+
+    .tela-final div {
+        height: 300px;
+        width: 320px;
+        top: calc(50% - 150px);
+        left: calc(50% - 160px);
     }
 }
