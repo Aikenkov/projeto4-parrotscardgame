@@ -1,5 +1,5 @@
 
-/* 
+
 let quantidade = prompt('Escolha o número de cartasSelecionadas (4-14)(par)')
 
 function escolherQuantidade() {
@@ -8,9 +8,9 @@ function escolherQuantidade() {
         quantidade = prompt('Escolha um número par de 4 a 14')
     }
 }
-escolherQuantidade() */
+escolherQuantidade()
 
-quantidade = 6;
+
 
 function comparador() {
     return Math.random() - 0.5;
