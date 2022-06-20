@@ -62,14 +62,24 @@ distribuir()
 
 
 function virarCarta(elemento) {
+    let verificar = elemento.querySelector('.frente').classList.contains('hidden');
 
-    elemento.classList.remove('virar')
-    vezesViradas++;
-    setTimeout(function () {
-        elemento.querySelector(".verso").classList.remove("hidden");
-        elemento.querySelector(".frente").classList.add("hidden");
+    if (verificar == false) {
+        if (carta1 == undefined || carta2 == undefined) {
+            elemento.classList.remove('virar')
+            vezesViradas++;
+            setTimeout(function () {
+                elemento.querySelector(".verso").classList.remove("hidden");
+                elemento.querySelector(".frente").classList.add("hidden");
 
-    }, 100);
+            }, 100);
+            verificarPar();
+        }
+
+
+    }
+
+
 
     function virarCima(elemento) {
         elemento.classList.remove("virar");
@@ -89,7 +99,6 @@ function virarCarta(elemento) {
         }, 100)
     }
 
-    verificarPar()
     function verificarPar() {
         if (cartasViradas == 1) {
             carta2 = elemento;
@@ -98,6 +107,8 @@ function virarCarta(elemento) {
             if (image1 == image2 && id1 !== id2) {
                 totalCartasViradas += 2;
                 cartasViradas = 0;
+                carta1 = undefined;
+                carta2 = undefined;
             } else {
                 cartasViradas = 0;
 
@@ -108,8 +119,12 @@ function virarCarta(elemento) {
 
                 function virarCarta2() {
                     virarBaixo(carta2);
+                    carta1 = undefined;
+                    carta2 = undefined;
                 }
                 setTimeout(virarCarta2, 1000)
+
+
             }
         } else if (cartasViradas == 0) {
             carta1 = elemento;
