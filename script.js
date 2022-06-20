@@ -1,4 +1,11 @@
 
+let cartasViradas = 0;
+let vezesViradas = 0;
+let totalCartasViradas = 0;
+
+let carta1, carta2;
+let id2, id1;
+let image1, image2;
 
 let quantidade = prompt('Escolha o número de cartasSelecionadas (4-14)(par)')
 
@@ -52,13 +59,6 @@ function distribuir() {
 distribuir()
 
 
-let cartasViradas = 0;
-let vezesViradas = 0;
-let totalCartasViradas = 0;
-
-let carta1, carta2;
-let id2, id1;
-let image1, image2;
 
 
 function virarCarta(elemento) {
@@ -120,7 +120,7 @@ function virarCarta(elemento) {
 
 
     }
-    parabenizar()
+    setTimeout(parabenizar, 5000)
 }
 
 function parabenizar() {
