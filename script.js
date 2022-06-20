@@ -7,7 +7,7 @@ let carta1, carta2;
 let id2, id1;
 let image1, image2;
 
-let quantidade = prompt('Escolha o número de cartasSelecionadas (4-14)(par)')
+let quantidade = prompt('Escolha um número par de 4 a 14')
 
 function escolherQuantidade() {
     while (quantidade < 4 || quantidade > 14 || quantidade % 2 !== 0) {
