@@ -10,7 +10,7 @@ function escolherQuantidade() {
 }
 escolherQuantidade() */
 
-quantidade = 8;
+quantidade = 6;
 
 function comparador() {
     return Math.random() - 0.5;
@@ -34,14 +34,15 @@ aleatorizar()
 function distribuir() {
     for (let i = 0; i < cartasSelecionadas.length; i++) {
         let carta = `
-        <div onclick="virarCarta(this)" class="carta virar" >
-                    <div class="face verso hidden">
-                        <img src="./images/${cartasSelecionadas[i]}.gif"/>
-                    </div>
-                    <div class="face frente">
+        <div onclick="virarCarta(this)" class="${i} ${cartasSelecionadas[i]} carta virar">
+                    <div class=" face frente">
                         <img src="./images/plantFront.png">
                     </div>
-                </div>
+                   
+                    <div class="face verso hidden">
+                        <img src="./images/${cartasSelecionadas[i]}.gif"/>
+                    </div>                  
+          </div>
         `;
 
         document.querySelector(".campo-de-jogo").innerHTML += carta;
@@ -51,32 +52,73 @@ function distribuir() {
 distribuir()
 
 
-let frente;
-let verso;
+let cartasViradas = 0;
+let totalCartasViradas = 0;
+
+let carta1, carta2;
+let id2, id1;
+let image1, image2;
+
 
 function virarCarta(elemento) {
-    let clicada = elemento.querySelector(".frente").parentNode;
-    clicada.classList.toggle("virar");
 
-    frente = elemento.querySelector(".frente");
-    verso = elemento.querySelector(".verso");
+    elemento.classList.remove('virar')
 
-    setTimeout(esconderFrente, 500);
-    setTimeout(esconderVerso, 500);
-}
+    setTimeout(function () {
+        elemento.querySelector(".verso").classList.remove("hidden");
+        elemento.querySelector(".frente").classList.add("hidden");
 
-function esconderVerso() {
-    if (verso.classList.contains("hidden")) {
-        verso.classList.remove("hidden")
-    } else {
-        verso.classList.add("hidden")
+    }, 100);
+
+    function virarCima(elemento) {
+        elemento.classList.remove("virar");
+
+        setTimeout(function () {
+            elemento.querySelector(".verso").classList.remove("hidden");
+            elemento.querySelector(".frente").classList.add("hidden");
+        }, 100)
+    }
+
+    function virarBaixo(elemento) {
+        elemento.classList.add("virar");
+
+        setTimeout(function () {
+            elemento.querySelector(".frente").classList.remove("hidden");
+            elemento.querySelector(".verso").classList.add("hidden");
+        }, 100)
+    }
+
+    verificarPar()
+    function verificarPar() {
+        if (cartasViradas == 1) {
+            carta2 = elemento;
+            image2 = elemento.classList[1];
+            id2 = elemento.classList[0];
+            if (image1 == image2 && id1 !== id2) {
+                totalCartasViradas += 2;
+                cartasViradas = 0;
+            } else {
+                cartasViradas = 0;
+
+                function virarCarta1() {
+                    virarBaixo(carta1);
+                }
+                setTimeout(virarCarta1, 1000)
+
+                function virarCarta2() {
+                    virarBaixo(carta2);
+                }
+                setTimeout(virarCarta2, 1000)
+            }
+        } else if (cartasViradas == 0) {
+            carta1 = elemento;
+            image1 = elemento.classList[1];
+            id1 = elemento.classList[0];
+            cartasViradas++;
+        }
+
+
     }
 }
 
-function esconderFrente() {
-    if (frente.classList.contains("hidden")) {
-        frente.classList.remove("hidden")
-    } else {
-        frente.classList.add("hidden")
-    }
-}
+
